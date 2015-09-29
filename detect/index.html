@@ -1,0 +1,153 @@
+<!doctype html>
+<!--[if lte IE 6]> <html class="no-js ie6 ie67 ie678" lang="en"> <![endif]-->
+<!--[if lte IE 7]> <html class="no-js ie7 ie67 ie678" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 ie678" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Detect : chargement conditionnel selon bande passante</title>
+
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="tomorrow.css">
+  <script src="highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+
+</head>
+
+<body>
+
+  <h1>Detect.js</h1>
+  <h2>densité + connexion</h2>
+
+  <div id="connexion"></div>
+  <div id="pxratio"></div>
+
+  <h2>Principe</h2>
+  <p><strong>Detect.js</strong> est un script permettant de détecter à la fois la vitesse de connexion de l'utilisateur et la densité de pixels de son écran dans le but de charger conditionnellement les images HD.</p>
+  <p>Concrètement, sur cette page, si la double condition "densité de pixels" + "bonne bande passante" est respectée, alors l'image initiale de 300px ci-dessous est remplacée par celle de 600px (<i>LazyLoading</i>).</p>
+
+  <h2>Image de test :</h2>
+  <img src="img/small/logo.png" class="detect" alt="logo Alsacreations" width="300" height="82">
+
+
+  <h2>Script :</h2>
+  <pre><code>// detect.js by @goetter and Alsacreations
+
+     // config variables
+    var delay = 2000, // DOM load breakpoint in millisecond
+      pxratio = 2, // pixel-ratio breakpoint 
+      name = "detect", // className to select
+      smallImg = "small", // prefix or suffix for small img (ex: "small" for "/small/pic.png")
+      bigImg = "big"; // prefix or suffix for big img (ex: "big" for "/big/pic.png")
+
+    if (window.addEventListener) {
+      window.addEventListener('load', domload);
+    }
+
+    function domload() {
+      // navigation timing begins 
+      var perf = window.performance.timing;
+
+      if (perf !== undefined) {
+        var timing = perf.domComplete - perf.domLoading,
+          imgs, i;
+        if (timing &lt;= delay) {
+          // now pixel density detect
+          q = "(-webkit-min-device-pixel-ratio: " + pxratio + "), (min-resolution: " + pxratio * 96 + "dpi), (min-resolution: " + pxratio + "dppx)";
+          if (("matchMedia" in window) && window.matchMedia(q).matches) {
+            // Everything OK ? Go Go Go !
+            // Grab all images with className
+            elts = document.getElementsByClassName(name);
+            // Get src value and change it
+            for (i = 0; i &lt; elts.length; i++) {
+              if (elts[i].src.indexOf(smallImg) >= 0)
+                elts[i].src = elts[i].src.replace(smallImg, bigImg);
+            }
+          }
+        }
+      }
+    }</code></pre>
+
+  <h2>Compatibilité</h2>
+  <ul>
+    <li>Safari 8+ et iOS Safari 8+</li>
+    <li>Android 4.0+</li>
+    <li>IE9+ et Windows Phone IE9+</li>
+    <li>Firefox et Firefox mobile</li>
+    <li>Chrome et Chrome mobile</li>
+    <li>Opera et Opera mobile</li>
+  </ul>
+
+  <h2>Téléchargement</h2>
+  <p>Télécharger <a href="detect.js">detect.js</a>
+  </p>
+
+  <h2>Licence</h2>
+  <p><a href="http://fr.wikipedia.org/wiki/WTFPL" title="Do What The Fuck you want to Public License">WTFPL</a></a>
+  </p>
+
+
+  <script>
+    // detect.js by @goetter and Alsacreations
+
+     // config variables
+    var delay = 2000, // DOM load breakpoint in millisecond
+      pxratio = 2, // pixel-ratio breakpoint 
+      name = "detect", // className to select
+      smallImg = "small", // prefix or suffix for small img (ex: "small" for "/small/pic.png")
+      bigImg = "big"; // prefix or suffix for big img (ex: "big" for "/big/pic.png")
+
+    if (window.addEventListener) {
+      window.addEventListener('load', domload);
+    }
+
+    function domload() {
+      // navigation timing begins 
+      var perf = window.performance.timing;
+
+      if (perf !== undefined) {
+        var timing = perf.domComplete - perf.domLoading,
+          imgs, i;
+        if (timing <= delay) {
+          // now pixel density detect
+          q = "(-webkit-min-device-pixel-ratio: " + pxratio + "), (min-resolution: " + pxratio * 96 + "dpi), (min-resolution: " + pxratio + "dppx)";
+          if (("matchMedia" in window) && window.matchMedia(q).matches) {
+            // Everything OK ? Go Go Go !
+            // Grab all images with className
+            elts = document.getElementsByClassName(name);
+            // Get src value and change it
+            for (i = 0; i < elts.length; i++) {
+              if (elts[i].src.indexOf(smallImg) >= 0)
+                elts[i].src = elts[i].src.replace(smallImg, bigImg);
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <script>
+    if (window.addEventListener) {
+      window.addEventListener('load', function () {
+        // navigation timing begins 
+        var perf = window.performance.timing;
+        if (perf) {
+          var timing = perf.domComplete - perf.domLoading;
+          // display connexion (optional)
+          document.getElementById('connexion').innerHTML = '<p class="deco">Chargement (DOM) : ' + timing + 'ms</p>';
+        }
+      });
+    }
+  </script>
+
+
+</body>
+
+</html>

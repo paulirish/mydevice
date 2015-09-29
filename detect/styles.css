@@ -1,0 +1,73 @@
+/* Deco */
+body {margin:0; padding:10px 1%; background:#fefdf2;
+  font-size: 1em;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;}
+h1 {margin-top: 20px; margin-bottom: 0px; font-size:2.8rem; 
+  color: #345; text-shadow: 1px 1px 1px #fff;}
+h2 {margin-top: 2rem; margin-bottom: 1rem; color: #6B9A49; text-shadow: 1px 1px 1px #fff; font-size:1.6rem}
+h1 + h2 {margin-top: 0}
+
+
+h1, h2 {text-align: center; font-weight: 400}
+
+pre {
+  font-size: 100%;
+  white-space: pre-line;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+	-webkit-tab-size: 2;
+	-moz-tab-size: 2;
+	-o-tab-size: 2;
+	tab-size: 2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.deco {
+  padding: .5em;
+  margin: 0 0 1px;
+  color: #fff;
+  background: #777;
+}
+
+.good {
+  background: ForestGreen;
+}
+
+.bad {
+  background: Maroon;
+}
+
+[id=bingo] {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+[id=bingo] .good {
+  background: none;
+  color: ForestGreen;
+}
+
+[id=bingo] .bad {
+  background: none;
+  color: Maroon;
+}
+
+ul {padding-left: 1em; list-style-position: inside}
+li {list-style: none;}
+li::before {content: "\2713 "; margin-right: .8rem;}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  [id=pxratio] {padding: .5em;   margin: 0 0 1px;   color: #fff;
+  background: #777;}
+  [id=pxratio]:before {content : "Densité de pixel >=2"}
+}
+
+@media (-webkit-max-device-pixel-ratio: 1.9), (max-resolution: 191dpi), (max-resolution: 1.9dppx) {
+  [id=pxratio] {padding: .5em;   margin: 0 0 1px;   color: #fff;
+  background: #777;}
+  [id=pxratio]:before {content : "Densité de pixel <2"}
+}

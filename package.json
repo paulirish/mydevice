@@ -1,0 +1,13 @@
+{
+  "name": "project",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-rename": "latest",
+    "gulp-less": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-autoprefixer": "latest"
+  }
+}

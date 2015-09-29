@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" id="html">
+<head>
+	<meta charset="UTF-8">
+	<title>mydevice.io, your device screen informations</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/styles.min.css">
+	<script src="js/modernizr.js"></script>
+</head>
+<body>
+	<h1>mydevice.io</h1>
+
+	<section class="info">
+		<div class="csswidth">my Viewport width&nbsp;:</div>
+		<div id="viewportwidth"></div>
+		<div id="viewportwidthem"></div>
+	</section>
+
+
+	<h2><span class="icon-mobile2"></span> My screen</h2>
+
+	<div class="box">
+		<h3>Sizes</h3>
+		<ul class="values">
+			<li>
+				<div class="cssdevwidth">CSS device-width&nbsp;: </div>
+			</li>
+			<li>
+				<div class="cssdevheight">CSS device-height&nbsp;: </div>
+			</li>
+			<li>
+				<div id="screenwidth"></div>
+			</li>
+			<li>
+				<div id="devicewidth"></div>
+			</li>
+			<li>
+				<div id="clientwidth"></div>
+			</li>
+			<li>
+				<div id="availwidth"></div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="box">
+		<h3>Pixel ratio</h3>
+		<ul class="values">
+			<li class="cssratio">CSS pixel-ratio : </li>
+			<li id="jsratio"></li>
+		</ul>
+	</div>
+
+	<div class="box">
+		<h3>Resolution</h3>
+		<ul class="values">
+			<li id="jsdpi"></li>
+			<li id="jsdppx"></li>
+			<li id="jsdpcm"></li>
+		</ul>
+	</div>
+
+	<div class="box">
+		<h3>Misc</h3>
+		<ul class="values">
+			<li id="rfs"></li>
+			<li class="cssorient">Orientation : </li>
+			<li id="deviceaspectratio"></li>
+		</ul>
+	</div>
+
+	<section class="features">
+	<h2><span class="icon-mobile2"></span> My features</h2>
+
+	<div class="box large">
+		<h3>CSS3</h3>
+		<ul class="values">
+			<li class="beforeafter">::before / ::after</li>
+			<li class="unitrem">rem unit</li>
+			<li class="css_vwunit">vw, vh, vmin, vmax units</li>
+			<li class="calcsupport">calc()</li>
+			<li class="fontsupport">@font-face</li>
+			<li class="columnssupport">multicolumns</li>
+			<li class="flexsupport">flexbox</li>
+			<li class="transsupport">transitions</li>
+			<li class="animsupport">animations</li>
+			<li class="transformssupport">transforms</li>
+			<li class="transforms3dsupport">transforms 3D</li>
+			<li class="regions">regions</li>
+			<li class="reflections">reflexions</li>
+			<li class="supportsupport">@supports</li>
+			<li class="positionsticky">position: sticky</li>
+			<li class="css_filters">filters</li>
+			<li class="css_objectfit">object-fit</li>
+			<li class="overflowscrolling">overflow-scrolling</li>
+		</ul>
+	</div>
+
+	<div class="box large">
+		<h3>HTML5 / JS</h3>
+		<ul class="values">
+			<li class="audio">audio</li>
+			<li class="video">video</li>
+			<li class="canvas">canvas</li>
+			<li class="touch">touch events</li>
+			<li id="pointerevents">pointer events</li>
+			<li class="svgsupport">SVG</li>
+			<li class="img_apng">aPNG format</li>
+			<li class="img_webp">WebP format</li>
+			<li class="webgl">webGL</li>
+			<li id="matchmedia">matchMedia()</li>
+			<li class="draganddrop">drag and Drop</li>
+			<li class="geolocation">geolocation</li>
+			<li class="applicationcache">appCache</li>
+			<li class="indexeddb">indexedDB</li>
+			<li class="websockets">websockets</li>
+			<li class="history">history API</li>
+			<li class="battery">battery API</li>
+			<li class="file">file API</li>
+			<li class="fullscreen">fullscreen API</li>
+			<li class="notification">notification API</li>
+			<li class="timing">navigation timing API</li>
+			<li class="vibration">vibration API</li>
+			<li class="performance">performance API</li>
+			<li class="load">load API</li>
+			<li id="srcset">srcset attribute</li>
+		</ul>
+	</div>
+	</section>
+
+	<div class="box-big">
+		<h2><span class="icon-mobile2"></span> Meta Viewport</h2>
+		<p class="viewport">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</p>
+	</div>
+
+	<div class="box-big">
+		<h2><span class="icon-mobile2"></span> User Agent</h2>
+		<p class="viewport" id="ua"></p>
+	</div>
+
+	<div class="box-big">
+		<h2><span class="icon-mobile2"></span> Reference picture</h2>
+		<img src="img/youhou-320.jpg" width="320" height="214" alt="rollercoaster">
+	</div>
+
+	<div class="box-big">
+		<h2><span class="icon-mobile2"></span> Resources</h2>
+		<ul class="values">
+			<li><a href="http://screensiz.es/">Screensiz.es</a></li>
+			<li><a href="http://viewportsizes.com/">Viewportsizes.com</a></li>
+			<li><a href="http://dpi.lv/">dpi.lv</a></li>
+			<li><a href="http://mqtest.io/">mqtest.io</a></li>
+			<li><a href="http://ryanve.com/lab/dimensions/">ryanve.com/lab</a></li>
+		</ul>
+	</div>
+
+
+	<a href="devices" class="btn">show me other devices&nbsp;?</a>
+
+	<p>mydevice.io made with love by <a href="https://twitter.com/goetter">@goetter</a>, with Modernizr and help from <a href="https://twitter.com/eQRoeil">@eQRoeil</a> and <a href="https://twitter.com/nhoizey">@nhoizey</a></p>
+
+<script>
+	/*!
+ * res 0.2.0-0+201403312143
+ * https://github.com/ryanve/res
+ * MIT License, 2014 Ryan Van Etten
+ */
+!function(a,b,c){"undefined"!=typeof module&&module.exports?module.exports=c():a[b]=c()}(this,"res",function(){function a(a){return null==a?m:a!==a?!1:l?l>=a:k([["min--moz-device-pixel-ratio:",a],["min-resolution:",a*d,"dpi"]],j)}function b(b){return null==b?a()*d:a(b/d)}function c(b){return null==b?a()/e:a(b*e)}var d=96,e=2.54/d,f="undefined"!=typeof window&&window,g="undefined"!=typeof screen&&screen,h=[].join,i=f.matchMedia,j=i?function(){return!!i.call(f,"("+h.call(arguments,"")+")").matches}:function(){return!1},k=function(a,b,c){for(var d=0,e=a.length;e>d;)if(b.apply(c,a[d++]))return!0;return!1},l=+f.devicePixelRatio||Math.sqrt(g.logicalXDPI*g.logicalYDPI)/d||0,m=l||!i?l:function(a){for(var b,c=41;c--&&!a(b=c/20););return b}(a);return{dppx:a,dpcm:c,dpi:b}});
+	/*!
+ * verge 1.9.1+201402130803
+ * https://github.com/ryanve/verge
+ * MIT License 2013 Ryan Van Etten
+ */
+!function(a,b,c){"undefined"!=typeof module&&module.exports?module.exports=c():a[b]=c()}(this,"verge",function(){function a(){return{width:k(),height:l()}}function b(a,b){var c={};return b=+b||0,c.width=(c.right=a.right+b)-(c.left=a.left-b),c.height=(c.bottom=a.bottom+b)-(c.top=a.top-b),c}function c(a,c){return a=a&&!a.nodeType?a[0]:a,a&&1===a.nodeType?b(a.getBoundingClientRect(),c):!1}function d(b){b=null==b?a():1===b.nodeType?c(b):b;var d=b.height,e=b.width;return d="function"==typeof d?d.call(b):d,e="function"==typeof e?e.call(b):e,e/d}var e={},f="undefined"!=typeof window&&window,g="undefined"!=typeof document&&document,h=g&&g.documentElement,i=f.matchMedia||f.msMatchMedia,j=i?function(a){return!!i.call(f,a).matches}:function(){return!1},k=e.viewportW=function(){var a=h.clientWidth,b=f.innerWidth;return b>a?b:a},l=e.viewportH=function(){var a=h.clientHeight,b=f.innerHeight;return b>a?b:a};return e.mq=j,e.matchMedia=i?function(){return i.apply(f,arguments)}:function(){return{}},e.viewport=a,e.scrollX=function(){return f.pageXOffset||h.scrollLeft},e.scrollY=function(){return f.pageYOffset||h.scrollTop},e.rectangle=c,e.aspect=d,e.inX=function(a,b){var d=c(a,b);return!!d&&d.right>=0&&d.left<=k()},e.inY=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.top<=l()},e.inViewport=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.right>=0&&d.top<=l()&&d.left<=k()},e});
+</script>
+
+<script>
+// root font size from @nhoizey
+var root = document.getElementById('html');
+var rfsstyle = window.getComputedStyle(root,null).getPropertyValue('font-size');
+var rfsstyle=parseInt(rfsstyle);
+document.getElementById('rfs').innerHTML = 'Root font size : <em>'+rfsstyle+'px</em>';
+
+
+// matchMedia
+if("matchMedia" in window) document.getElementById('matchmedia').className='supported';
+
+// srcset attribute
+if('srcset' in document.createElement('img')) document.getElementById('srcset').className='supported';
+
+// Pointer events
+if (window.navigator.pointerEnabled) {
+    document.getElementById('pointerevents').className='supported';
+}
+
+// screen.width
+var sw = screen.width;
+var sh = screen.height;
+document.getElementById('screenwidth').innerHTML = 'JS screen.width : <em>'+sw+'px</em>';
+
+// screen.availWidth
+var aw = screen.availWidth;
+var ah = screen.availHeight;
+document.getElementById('availwidth').innerHTML = 'JS screen.availWidth : <em>'+aw+'px</em>';
+
+// window.innerWidth
+var dw = window.innerWidth;
+var dh = window.innerHeight;
+document.getElementById('devicewidth').innerHTML = 'JS window.innerWidth : <em>'+dw+'px</em>';
+
+// document.body.clientWidth
+var bw = document.body.clientWidth;
+var bh = document.body.clientHeight;
+document.getElementById('clientwidth').innerHTML = 'JS body.clientWidth : <em>'+bw+'px</em>';
+
+// resolution
+var jsdpi = res.dpi();
+jsdpi=jsdpi.toFixed(2);
+document.getElementById('jsdpi').innerHTML = 'Resolution (dpi) : <em>'+jsdpi+'dpi</em>';
+var jsdppx = res.dppx();
+jsdppx=jsdppx.toFixed(2);
+document.getElementById('jsdppx').innerHTML = 'Resolution (dppx) : <em>'+jsdppx+'dppx</em>';
+var jsdpcm = res.dpcm();
+jsdpcm=jsdpcm.toFixed(2);
+document.getElementById('jsdpcm').innerHTML = 'Resolution (dpcm) : <em>'+jsdpcm+'dpcm</em>';
+
+// aspect ratio
+var deviceaspectratio = verge.aspect(screen);
+deviceaspectratio=deviceaspectratio.toFixed(2);
+document.getElementById('deviceaspectratio').innerHTML = 'Device Aspect-Ratio : <em>'+deviceaspectratio+'</em>';
+
+// viewport width
+var viewportwidth = verge.viewportW();
+document.getElementById('viewportwidth').innerHTML = '<em>'+viewportwidth+'px</em>';
+
+// viewport width em
+var viewportwidthem = viewportwidth / rfsstyle;
+viewportwidthem=viewportwidthem.toFixed(0);
+document.getElementById('viewportwidthem').innerHTML = '<em>'+viewportwidthem+'em</em>';
+
+// addEventlistener on resize
+window.addEventListener('resize', function() {
+	// viewport width
+	var viewportwidth = verge.viewportW();
+	document.getElementById('viewportwidth').innerHTML = '<em>'+viewportwidth+'px</em>';
+	// viewport width em
+	var viewportwidthem = viewportwidth / rfsstyle;
+	viewportwidthem=viewportwidthem.toFixed(0);
+	document.getElementById('viewportwidthem').innerHTML = '<em>'+viewportwidthem+'em</em>';
+	// window.innerWidth
+	var dw = window.innerWidth;
+	var dh = window.innerHeight;
+	document.getElementById('devicewidth').innerHTML = 'JS window.innerWidth : <em>'+dw+'px</em>';
+	// document.body.clientWidth
+	var bw = document.body.clientWidth;
+	var bh = document.body.clientHeight;
+	document.getElementById('clientwidth').innerHTML = 'JS body.clientWidth : <em>'+bw+'px</em>';
+	// screen.availWidth
+	var aw = screen.availWidth;
+	var ah = screen.availHeight;
+	document.getElementById('availwidth').innerHTML = 'JS screen.availWidth : <em>'+aw+'px</em>';
+});
+
+// pixel ratio
+var pxr = window.devicePixelRatio || window.screen.availWidth / document.documentElement.clientWidth;
+pxr=pxr.toFixed(2);
+document.getElementById('jsratio').innerHTML = 'JS pixel-ratio : <em>'+pxr+'</em>';
+
+// user agent
+if(navigator.userAgent) document.getElementById('ua').innerHTML = navigator.userAgent;
+
+</script>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9345479-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
