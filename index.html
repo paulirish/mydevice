@@ -262,8 +262,7 @@ window.addEventListener('resize', function() {
 });
 
 // pixel ratio
-var pxr = window.devicePixelRatio || window.screen.availWidth / document.documentElement.clientWidth;
-pxr=pxr.toFixed(2);
+var pxr = window.devicePixelRatio || (window.screen.availWidth / document.documentElement.clientWidth).toFixed(2);
 document.getElementById('jsratio').innerHTML = 'JS pixel-ratio : <em>'+pxr+'</em>';
 
 // user agent
